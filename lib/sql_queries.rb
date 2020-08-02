@@ -50,7 +50,8 @@ def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_b
   "SELECT projects.category, SUM(pledges.amount)
   FROM projects
   JOIN pledges ON projects.id = pledges.project_id
-  WHERE projects.category = 'books';"
+  WHERE projects.category = 'books'
+  GROUP BY projects.category;"
 end
 
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_title
